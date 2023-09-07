@@ -30,7 +30,7 @@ class _CustomAppsList extends StatefulWidget {
 class _CustomAppsListState extends State<_CustomAppsList> {
   late Future<List<Application>>? myApps = [] as Future<List<Application>>?;
 
-  Future<List<Application>>? loadRTApps() async {
+  Future<List<Application>>? loadCustomApps() async {
     await DeviceApps.getApp('com.samsung.android.oneconnect')
         .then((oneConnect) => oneConnect != null
             ? myApps?.then((apps) => apps.add(oneConnect))
@@ -52,7 +52,7 @@ class _CustomAppsListState extends State<_CustomAppsList> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Application>>(
-        future: loadRTApps(),
+        future: loadCustomApps(),
         builder: (BuildContext context, AsyncSnapshot<List<Application>> data) {
           if (data.data == null) {
             return const Center(child: CircularProgressIndicator());
