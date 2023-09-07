@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:roadtech_gallery/apps_custom_list.dart';
 import 'package:roadtech_gallery/apps_installed_list.dart';
 
-void main() => runApp(const RTGalleryApp());
+void main() => runApp(const MyGalleryApp());
 
-class RTGalleryApp extends StatelessWidget {
-  const RTGalleryApp({super.key});
+class MyGalleryApp extends StatelessWidget {
+  const MyGalleryApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'RT Gallery',
+      title: 'Apps Gallery',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute<Object>(
                         builder: (BuildContext context) =>
-                            const AppsRoadTech()),
+                            const AppsCustomList()),
                   );
                 },
                 child: const Text('Custom Apps')),
