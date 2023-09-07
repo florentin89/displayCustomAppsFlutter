@@ -1,33 +1,33 @@
 import 'package:device_apps/device_apps.dart';
 import 'package:flutter/material.dart';
 
-class AppsRoadTech extends StatefulWidget {
-  const AppsRoadTech({super.key});
+class AppsCustomList extends StatefulWidget {
+  const AppsCustomList({super.key});
 
   @override
-  State<AppsRoadTech> createState() => _AppsRoadTechState();
+  State<AppsCustomList> createState() => _AppsCustomListState();
 }
 
-class _AppsRoadTechState extends State<AppsRoadTech> {
+class _AppsCustomListState extends State<AppsCustomList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("RT Apps"),
+        title: const Text("Custom Apps"),
       ),
-      body: const _RTAppsList(),
+      body: const _CustomAppsList(),
     );
   }
 }
 
-class _RTAppsList extends StatefulWidget {
-  const _RTAppsList({Key? key}) : super(key: key);
+class _CustomAppsList extends StatefulWidget {
+  const _CustomAppsList({Key? key}) : super(key: key);
 
   @override
-  State<_RTAppsList> createState() => _RTAppsListState();
+  State<_CustomAppsList> createState() => _CustomAppsListState();
 }
 
-class _RTAppsListState extends State<_RTAppsList> {
+class _CustomAppsListState extends State<_CustomAppsList> {
   late Future<List<Application>>? myApps = [] as Future<List<Application>>?;
 
   Future<List<Application>>? loadRTApps() async {
